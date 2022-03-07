@@ -5,14 +5,13 @@ const isOpen = true;
 const stringBoolean = "true";
 const stringNumber = "100";
 //2.
-let result = "";
 //a)
-result = 10 % 4;
+const result = 10 % 4;
 console.log(result);
 //b)
 const age2 = 33;
 const name2 = "Tomasz";
-let result2 = `${name2} ma ${age2} lata`;
+const result2 = `${name2} ma ${age2} lata`;
 console.log(result2);
 //c)
 const firstName = "Jan";
@@ -63,7 +62,7 @@ const arrI = [
 ];
 console.log(arrI[1].name);
 //j)
-let valueJ = 2;
+const valueJ = 2;
 const arrJ = [];
 arrJ.push(valueJ);
 console.log(arrJ);
@@ -112,8 +111,8 @@ const person2 = {
 };
 
 if (
-  person2.age >= 18 ||
-  person2.drivingLicense == true ||
+  person2.age >= 18 &&
+  person2.drivingLicense == true &&
   person2.drunk == false
 ) {
   console.log(`${person2.name} can drive a car`);
@@ -122,21 +121,24 @@ if (
 }
 //c)
 const car6 = {
-  name: "mustang",
+  name6: "mustang",
   productionYear: 2020,
   color: "red",
 };
-const result6 = `Moje auto to ${car6.name} i zostalo wyprodukowane w roku ${car6.productionYear}.`;
+
+const { name6, productionYear, color } = car6;
+
+const result6 = `Moje auto to ${name6} i zostalo wyprodukowane w roku ${productionYear}.`;
 console.log(result6);
 //d)
 //first method
 const isAdult = true;
-isAdult === true
+isAdult
   ? "Mozesz kupic alkohol"
   : "Nie mozesz kupic alkoholu, jestes nieletni!";
 //second method
-if (isAdult === true) {
-  return "Mozesz kupic alkohol";
+if (isAdult) {
+  console.log("Mozesz kupic alkohol");
 } else {
-  return "Nie mozesz kupic alkoholu";
+  console.log("Nie mozesz kupic alkoholu");
 }
